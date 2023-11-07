@@ -65,7 +65,7 @@
                 // Loop through each row and display the data
                 while ($row = $result->fetch_assoc()) {
                     echo '<tr>';
-                    echo '<td>' . $row['ID'] . '</td>';
+                    echo '<td>' . $row['id'] . '</td>';
                     echo '<td>' . $row['Profile img'] . '</td>';
                     echo '<td>' . $row['NameSurname'] . '</td>';
                     echo '<td>' . $row['Age'] . '</td>';
@@ -75,8 +75,8 @@
                     echo '<td>' . $row['Password'] . '</td>';
                     echo '<td>' . $row['Rank'] . '</td>';
                     echo '<td>';
-                    echo '<a href="upreception.php?ID=' . $row['ID'] . '">Update</a> | ';
-                    echo '<a href="receptionists.php?delete=' . $row['ID'] . '">Delete</a>';
+                    echo '<a href="upreception.php?ID=' . $row['id'] . '">Update</a> | ';
+                    echo '<a href="receptionists.php?delete=' . $row['id'] . '">Delete</a>';
                     echo '</td>';
                     echo '</tr>';
                 }
@@ -93,8 +93,8 @@
     <br>
     <h1>Add A New Receptionist:</h1><br>
     <form class="Add" action="createreceptionist.php" method="POST">
-			<label for="ID">ID:</label>
-			<input type="text" class="form-control m-2" id="ID" name="ID">
+			<label for="id">ID:</label>
+			<input type="text" class="form-control m-2" id="id" name="id">
 			<label for="Profile img">Profile Img:</label>
 			<input type="number" class="form-control m-2" id="ProfileImg" name="Profile img">
 			<label for="NameSurname">NameSurname:</label>

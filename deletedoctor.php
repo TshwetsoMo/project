@@ -4,10 +4,10 @@
 include 'dv200_db.php';
 
 // using the get methode
-$id = $_GET['id'];
+$ID = $_GET['id'];
 
 //some sql
-$sql = "DELETE FROM doctors WHERE `doctors`.`id` = '$id'";
+$sql = "DELETE FROM doctors WHERE `doctors`.`id` = '$ID'";
 
 $conn->query($sql);
 

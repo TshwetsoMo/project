@@ -82,7 +82,7 @@
                     echo '<td>' . $row['Room'] . '</td>';
                     echo '<td>' . $row['Date'] . '</td>';
                     echo '<td>';
-                    echo '<a class="btn btn-primary" href="updateappointments.php?id=' . $row['Patient'] . '">Edit</a> | ';
+                    echo '<a class="btn btn-primary" href="updateappointments.php?id=' . $row['Patient'] . '">Update</a> | ';
                     echo '<a class="btn btn-primary" href="deleteappointment.php?delete=' . $row['Patient'] . '">Delete</a>';
                     echo '</td>';
                     echo '</tr>';
