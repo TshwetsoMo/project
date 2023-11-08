@@ -1,4 +1,4 @@
-# MoClips
+# MedicalCenter
 
 
 Medical Center is a web portal designed to streamline medical appointment management. It provides a user-friendly interface for patients, doctors, and receptionists to schedule, view, and manage appointments efficiently. This project aims to enhance the overall healthcare experience by leveraging modern web technologies.
