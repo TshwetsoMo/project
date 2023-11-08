@@ -2,9 +2,9 @@
 // Sometimes called config.php
 include 'dv200_db.php';
 
-$id = $_GET['id'];
+$id = $_GET['ID'];
 
-$sql = "DELETE FROM patients WHERE id = $id";
+$sql = "DELETE FROM patients WHERE ID = $ID";
 $conn->query($sql);
 
 $conn->close();

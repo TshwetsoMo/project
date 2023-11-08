@@ -1,14 +1,22 @@
 <?php
-// Sometimes called config.php
 include 'dv200_db.php';
 
-$ID = $_GET['ID'];
+// Check if ID parameter is set in the URL
+if(isset($_GET['id'])) {
+    $ID = $_GET['id'];
 
-$sql = "DELETE FROM patients WHERE ID = $ID";
+    $sql = "DELETE FROM patients WHERE ID = $ID";
 
-$conn->query($sql);
+    if ($conn->query($sql)) {
+        echo "Record deleted successfully";
+    } else {
+        echo "Error deleting record: " . $conn->error;
+    }
 
-$conn->close();
-header("location: ptabledb.php");
-
+    // Close the connection
+    $conn->close();
+} else {
+    echo "ID parameter not set in the URL";
+}
+header("location: patients.php");
 ?>

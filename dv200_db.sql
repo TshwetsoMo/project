@@ -80,7 +80,7 @@ INSERT INTO `doctors` (`id`, `RoomNumber`, `ProfileImg`, `NameSurname`, `Age`, `
 -- --------------------------------------------------------
 
 --
--- Table structure for table `head receptionist`
+-- Table structure for table `receptionist`
 --
 
 CREATE TABLE `head receptionist` (
@@ -167,7 +167,7 @@ CREATE TABLE `profiles` (
 
 CREATE TABLE `receptionist` (
   `id` int(25) NOT NULL,
-  `Profile img` text NOT NULL,
+  `ProfileImg` text NOT NULL,
   `NameSurname` varchar(25) NOT NULL,
   `Age` int(25) NOT NULL,
   `Gender` varchar(25) NOT NULL,
@@ -181,7 +181,7 @@ CREATE TABLE `receptionist` (
 -- Dumping data for table `receptionist`
 --
 
-INSERT INTO `receptionist` (`id`, `Profile img`, `NameSurname`, `Age`, `Gender`, `PhoneNumber`, `Email`, `Password`, `Rank`) VALUES
+INSERT INTO `receptionist` (`id`, `ProfileImg`, `NameSurname`, `Age`, `Gender`, `PhoneNumber`, `Email`, `Password`, `Rank`) VALUES
 (980909675, '', 'Chimamanda Adiche', 25, 'Female', 123456789, 'adiche@emails.com', 'bosslady', 'Receptionist'),
 (1123456789, '', 'Maya Angelou', 33, 'Female', 123456789, 'Mangelou@emails.com', 'meta101', 'Receptionist'),
 (1223456789, '', 'Ayn Rand', 43, 'Female', 123456789, 'Arand@emails.com', 'selfish101', 'Receptionist'),

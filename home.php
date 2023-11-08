@@ -45,6 +45,7 @@
     <table class="appointments-table">
         <thead>
             <tr>
+                <th>ID</th>
                 <th>Patient</th>
                 <th>Doctor</th>
                 <th>Room</th>
@@ -54,19 +55,8 @@
         </thead>
         <tbody>
             <?php
-            // Database connection settings
-            $host = 'localhost';
-            $username = 'root';
-            $password = '';
-            $database = 'DV200_db';
-
-            // Create a new connection
-            $conn = new mysqli($host, $username, $password, $database);
-
-            // Check the connection
-            if ($conn->connect_error) {
-                die("Connection failed: " . $conn->connect_error);
-            }
+            // Include database connection settings and use a separate PHP file for database connection
+            include 'dv200_db.php';
 
             // SQL query to fetch data from the database
             $sql = "SELECT * FROM appointments";
@@ -77,19 +67,20 @@
                 // Loop through each row and display the data
                 while ($row = $result->fetch_assoc()) {
                     echo '<tr>';
+                    echo '<td>' . $row['ID'] . '</td>';
                     echo '<td>' . $row['Patient'] . '</td>';
                     echo '<td>' . $row['Doctor'] . '</td>';
                     echo '<td>' . $row['Room'] . '</td>';
                     echo '<td>' . $row['Date'] . '</td>';
                     echo '<td>';
-                    echo '<a class="btn btn-primary" href="updateappointments.php?id=' . $row['Patient'] . '">Update</a> | ';
-                    echo '<a class="btn btn-primary" href="deleteappointment.php?delete=' . $row['Patient'] . '">Delete</a>';
+                    echo '<a class="btn btn-primary" href="updateappointments.php?id=' . $row['ID'] . '">Update</a> | ';
+                    echo '<a class="btn btn-primary" href="deleteappointment.php?id=' . $row['ID'] . '">Delete</a>';
                     echo '</td>';
                     echo '</tr>';
                 }
             } else {
                 // If no rows are returned, display a message
-                echo '<tr><td colspan="9">No doctors found.</td></tr>';
+                echo '<tr><td colspan="9">No appointments found.</td></tr>';
             }
 
             // Close the database connection
@@ -98,24 +89,33 @@
         </tbody>
     </table>
     <br>
-    <h1>Add A New Appointment:</h1><br>
-    <form class="Add" action="createappointment.php" method="POST">
-			<label for="Patient">Patient:</label>
-			<?php 
-            include 'dropdownpatients.php';
-            ?>
-
-			<label for="Doctor">Doctor:</label>
-			<?php 
-            include 'dropdowndoctors.php';
-            ?>
-            <label for="Room">Room:</label>
-			<?php
-            include 'dropdownrooms.php';
-            ?>
-            <label for="Date">Date:</label>
-			<input type="dd/mm/yyy" class="form-control m-2" id="Date" name="Date">
-			<button type="submit" class="btn btn-primary">Add</button>
-		</form><br>
+    <div className='addbox'>
+        <h1>Add A New Appointment:</h1><br>
+        <div>
+            <form class="Add" action="createappointment.php" method="POST">
+                <label for="ID">ID:</label>
+                <input type="number" id="ID" name="ID"><br/>
+                <label for="Patient">Patient:</label>
+                <?php 
+                // Include dropdownpatients.php to populate the patient dropdown
+                include 'dropdownpatients.php';
+                ?><br/>
+                <label for="Doctor">Doctor:</label>
+                <?php 
+                // Include dropdowndoctors.php to populate the doctor dropdown
+                include 'dropdowndoctors.php';
+                ?><br/>
+                <label for="Room">Room:</label>
+                <?php
+                // Include dropdownrooms.php to populate the room dropdown
+                include 'dropdownrooms.php';
+                ?><br/>
+                <label for="Date">Date:</label>
+                <input type="date" class="form-control m-2" id="Date" name="Date"><br/>
+                <button type="submit" class="btn btn-primary">Add</button>
+            </form><br>
+        </div>
+    </div>
+    
 </body>
 </html>

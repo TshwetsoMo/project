@@ -3,13 +3,14 @@
 include 'dv200_db.php';
 
 //Include the ID of the element you get it from in the square brackets.
+$ID = $_POST['ID'];
 $patient = $_POST['patients'];
 $doctor = $_POST['doctors'];
 $RoomNumber = $_POST['rooms'];
 $Date = $_POST['Date'];
 
 // sql query:
-$sql = "INSERT INTO appointments (Patient, Doctor, Room, Date ) VALUES('$patient', '$doctor', '$RoomNumber', '$Date')";
+$sql = "INSERT INTO appointments (ID, Patient, Doctor, Room, Date ) VALUES('$ID','$patient', '$doctor', '$RoomNumber', '$Date')";
 
 //$conn is from dv200_db.php. This runs the code with the authentication from the dv200_db.php file.
 $conn->query($sql);

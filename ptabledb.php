@@ -36,13 +36,13 @@ while ($row = $result->fetch_assoc()) {
         echo "<td>" . $row['PhoneNumber'] . "</td>";
         echo "<td>" . $row['MedicalAidNumber'] . "</td>";
         echo "<td>" . $row['history'] . "</td>";
-        echo '<td><a class="btn btn-primary" href="patients.php?id=' . $row['id'] . '" role="button">Update</a></td>';
+        echo '<td><a class="btn btn-primary" href="patients.php?id=' . $row['ID'] . '" role="button">Update</a></td>';
 
         //Associative array
         //$age = array("Peter"=>"Doe", "Ben"=>"Floor", "Joe"=>"Dirt");
     }
 
-    echo '<td><a class="btn btn-danger" href="deletepatient.php?id=' . $row['id'] . '" role="button">Delete</a></td>';
+    echo '<td><a class="btn btn-danger" href="deletepatient.php?id='.$row['ID'] . '" role="button">Delete</a></td>';
     echo "</tr>";
 }
 $conn->close();

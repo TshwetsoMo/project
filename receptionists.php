@@ -66,7 +66,7 @@
                 while ($row = $result->fetch_assoc()) {
                     echo '<tr>';
                     echo '<td>' . $row['id'] . '</td>';
-                    echo '<td>' . $row['Profile img'] . '</td>';
+                    echo '<td>' . $row['ProfileImg'] . '</td>';
                     echo '<td>' . $row['NameSurname'] . '</td>';
                     echo '<td>' . $row['Age'] . '</td>';
                     echo '<td>' . $row['Gender'] . '</td>';
@@ -76,7 +76,7 @@
                     echo '<td>' . $row['Rank'] . '</td>';
                     echo '<td>';
                     echo '<a href="upreception.php?ID=' . $row['id'] . '">Update</a> | ';
-                    echo '<a href="receptionists.php?delete=' . $row['id'] . '">Delete</a>';
+                    echo '<a href="deletereceptionist.php?id=' . $row['id'] . '">Delete</a>';
                     echo '</td>';
                     echo '</tr>';
                 }
@@ -95,20 +95,20 @@
     <form class="Add" action="createreceptionist.php" method="POST">
 			<label for="id">ID:</label>
 			<input type="text" class="form-control m-2" id="id" name="id">
-			<label for="Profile img">Profile Img:</label>
-			<input type="number" class="form-control m-2" id="ProfileImg" name="Profile img">
+			<label for="ProfileImg">Profile Img:</label>
+			<input type="number" class="form-control m-2" id="ProfileImg" name="ProfileImg">
 			<label for="NameSurname">NameSurname:</label>
 			<input type="text" class="form-control m-2" id="NameSurname" name="NameSurname">
 			<label for="Age">Age:</label>
 			<input type="number" class="form-control m-2" id="Age" name="Age">
 			<label for="Gender">Gender:</label>
 			<input type="text" class="form-control m-2" id="Gender" name="Gender">
-			<label for="PhoneNumber">PhoneNumber:</label>
-			<input type="number" class="form-control m-2" id="PhoneNumber" name="Phone Number">
+			<label for="PhoneNumber">Phone Number:</label>
+            <input type="number" class="form-control m-2" id="PhoneNumber" name="PhoneNumber">
 			<label for="Email">Email:</label>
 			<input type="text" class="form-control m-2" id="Email" name="Email">
 			<label for="Password">Password:</label>
-			<input type="number" class="form-control m-2" id="Password" name="Password">
+			<input type="text" class="form-control m-2" id="Password" name="Password">
 			<label for="Rank">Rank:</label>
 			<input type="text" class="form-control m-2" id="Rank" name="Rank">
 			<button type="submit" class="btn btn-primary">Add</button>

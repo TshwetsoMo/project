@@ -79,7 +79,7 @@
                     echo '<td>' . $row['Specialization'] . '</td>';
                     echo '<td>';
                     echo '<a href="updatedoctors.php?id=' . $row['id'] . '">Edit</a> | ';
-                    echo '<a href="deletedoctor.php?delete=' . $row['id'] . '">Delete</a>';
+                    echo '<a href="deletedoctor.php?id=' . $row['id'] . '">Delete</a>';
                     echo '</td>';
                     echo '</tr>';
                 }

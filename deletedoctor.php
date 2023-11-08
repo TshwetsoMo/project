@@ -7,7 +7,7 @@ include 'dv200_db.php';
 $ID = $_GET['id'];
 
 //some sql
-$sql = "DELETE FROM doctors WHERE `doctors`.`id` = '$ID'";
+$sql = "DELETE FROM doctors WHERE id = '$ID'";
 
 $conn->query($sql);
 

@@ -1,14 +1,23 @@
 <?php
-// Sometimes called config.php
 include 'dv200_db.php';
 
-$Patient = $_GET['Patient'];
+// Check if ID parameter is set in the URL
+if(isset($_GET['id'])) {
+    $ID = $_GET['id'];
 
-$sql = "DELETE FROM appointments WHERE Patient = $Patient";
+    $sql = "DELETE FROM appointments WHERE ID = $ID";
 
-$conn->query($sql);
+    if ($conn->query($sql)) {
+        echo "Record deleted successfully";
+    } else {
+        echo "Error deleting record: " . $conn->error;
+    }
 
-$conn->close();
+    // Close the connection
+    $conn->close();
+} else {
+    echo "ID parameter not set in the URL";
+}
 header("location: home.php");
-
 ?>
+

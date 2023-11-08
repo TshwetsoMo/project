@@ -11,6 +11,7 @@
             margin-top: 5px;
             margin-bottom: 5px;
             border-radius: 0px;
+			float: left;
             box-shadow: 0px 0px 30px rgba(0, 132, 255, 0.452);
         }
 		.navbar {
